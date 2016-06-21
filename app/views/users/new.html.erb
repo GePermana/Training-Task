@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag "main" %>
+<%= form_for @user, html: {multipart: true} do |f| %>
+<form class="form-horizontal">
+
+
+<div class="col-md-8">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="col-sm-2 control-label">User Name</label>
+    <div class="col-sm-6">
+   <%=f.text_field :username,:class=>"form-control"%>
+   <%= @user.errors[:username].first unless @user.errors[:username].blank? %>
+  </div>
+  </div>
+  </div>
+ <br>
+ <br>
+ 
+  
+ <div class="col-md-8">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="col-sm-2 control-label">Email Address</label>
+    <div class="col-sm-6">
+    <%= f.text_field :email,:class=>"form-control" %>  
+    <%= @user.errors[:email].first unless @user.errors[:email].blank? %>
+  </div>
+  </div>
+  </div>
+ <br>
+ <br>
+  
+
+<div class="col-md-8">
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-6">
+    <%= f.password_field :password,:class=>"form-control" %> 
+    <%= @user.errors[:password].first unless @user.errors[:password].blank? %> 
+  </div>
+  </div>
+  </div>
+ <br>
+ <br>
+  
+
+<div class="col-md-8">
+ <div class="form-group">
+    <label for="exampleInputPassword1" class="col-sm-2 control-label">Password Confirmation</label>
+    <div class="col-sm-6">
+    <%= f.password_field :password_confirmation,:class=>"form-control" %> 
+    <%= @user.errors[:password_confirmation].first unless @user.errors[:password_confirmation].blank? %>
+  </div>
+  </div>
+  </div>
+ <br>
+<br>
+ 
+
+<div class="col-md-8">
+<div class="form-group">
+    <label for="exampleInputEmail1" class="col-sm-2 control-label"><%= f.label :humanizer_answer, @user.humanizer_question %></label>
+    <div class="col-sm-6">
+    <%= f.text_field :humanizer_answer,:class=>"form-control" %>
+    <%= f.hidden_field :humanizer_question_id %>
+  </div>
+  </div>
+  </div>
+
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+          <%= f.submit :class=> "btn btn-raised btn-success ripple-container"  %>
+    
+        </div>
+<% end %>
+</div>

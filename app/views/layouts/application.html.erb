@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebPro</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+   <!-- Material Design fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- Bootstrap Material Design -->
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-material-design.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css">
+
+</head>
+<body>
+<div class="bs-component">
+          <div class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+              </div>
+              <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+
+                  <li class="active"><%= link_to "Home", root_path%></li>
+
+                  <li><%= link_to "New Post", new_post_path %></li>
+
+                  <li><%= link_to "New Article", articles_new_path %></li>
+
+                  <li><%= link_to "View Articles", articles_path %></li>
+
+
+                  <li class="dropdown">
+                    <a  data-target="#" class="dropdown-toggle" data-toggle="dropdown">Menu
+                      <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to "Home", root_path%></li>
+                      <li><%= link_to "New Post", new_post_path %></li>
+                       <li><%= link_to "View Articles", articles_path %></li>
+                      <li class="divider"></li>
+                     </ul>
+                  </li>
+                </ul>
+
+         <ul class="nav navbar-nav navbar-right">
+
+                  <li><%= link_to "Login", new_session_path %></li>
+
+                  <li><%= link_to "Sign-up", sign_up_path %></li>        
+                
+              </div>
+            </div>
+          </div>
+
+
+
+
+        <div style="display: none;" id="source-button" class="btn btn-primary btn-xs">&lt; &gt;</div></div>
+
+
+
+
+<%= yield %>
+
+</body>
+</html>
